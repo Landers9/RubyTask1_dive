@@ -1,18 +1,18 @@
 # Debut du programme et creation de la classe Player
 class Player
   def hand
-    puts "Veuillez saisir un nombre."
+    puts "Veuillez saisir un nombre entier entre 0 et 2"
     puts "0: Goo\n1: Choki\n2: Par"
 
-    input_hand = gets.to_i
+    input_hand = gets
 
-    while input_hand != 0 && input_hand !=1 && input_hand != 2
+    while !input_hand.match?(/[0-2]/)
       puts "Veuillez saisir un nombre entier entre 0 et 2"
       puts "0: Goo\n1: Choki\n2: Par"
 
-      input_hand = gets.to_i
+      input_hand = gets
     end
-    return input_hand
+    return input_hand.to_i
   end
 end
 
